@@ -1,0 +1,34 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: $color-primary;
+  color: white;
+
+  &__wrapper {
+    width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      margin-left: 1.5rem;
+    }
+
+    span {
+      font-size: 1.1rem;
+      margin-left: 1.5rem;
+    }
+  }
+}

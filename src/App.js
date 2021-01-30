@@ -1,5 +1,14 @@
+import Layout from "./components/layout";
+import IndexPage from "./pages";
+
+import "./App.scss";
+
 function App() {
-  return <div>Hello there!</div>;
+  return (
+    <Layout>
+      <IndexPage />
+    </Layout>
+  );
 }
 
 export default App;

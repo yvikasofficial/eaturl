@@ -1,0 +1,13 @@
+.button {
+  padding: 5px 10px;
+  background-color: $color-green;
+  border-radius: 5px;
+  font-size: 1.01rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
