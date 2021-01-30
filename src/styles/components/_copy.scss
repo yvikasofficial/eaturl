@@ -1,0 +1,43 @@
+.copy {
+  width: 100%;
+
+  &__wrapper {
+    width: 1200px;
+    margin: 50px auto;
+  }
+
+  &__auth {
+    border: 2px solid $color-grey;
+    border-radius: 5px;
+    padding: 20px;
+    svg {
+      height: 80px;
+      width: 80px;
+    }
+
+    div {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    h3 {
+      font-weight: 500;
+    }
+
+    p {
+      color: grey;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .col {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
