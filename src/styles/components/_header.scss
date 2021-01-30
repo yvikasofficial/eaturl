@@ -6,8 +6,7 @@
   z-index: 10;
 
   &__wrapper {
-    width: 1200px;
-    margin: 20px auto;
+    @include box-width;
     display: flex;
     align-items: center;
     justify-content: space-between;

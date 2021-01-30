@@ -1,0 +1,62 @@
+.about {
+  width: 100%;
+  margin: 100px 0;
+
+  &__wrapper {
+    @include box-width;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 1.9rem;
+      color: $color-primary;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: grey;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    margin-top: 50px;
+  }
+}
+
+.about-card {
+  border: 2px solid $color-grey;
+
+  &:hover {
+    border: 2px solid $color-blue;
+  }
+
+  border-radius: 10px;
+  padding: 50px 30px;
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  svg {
+    height: 40px;
+    width: 40px;
+    fill: $color-blue;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin: 20px 0;
+  }
+
+  p {
+    color: grey;
+    text-align: center;
+  }
+}
