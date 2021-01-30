@@ -3,6 +3,10 @@
   width: 100%;
   background-color: #bee2e7;
 
+  @include media("<=tablet") {
+    height: 50vh;
+  }
+
   img {
     height: 70vh;
     width: 100%;

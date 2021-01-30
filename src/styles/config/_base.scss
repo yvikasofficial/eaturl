@@ -12,3 +12,12 @@ body {
   color: black;
   background: white;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-blue;
+  }
+}

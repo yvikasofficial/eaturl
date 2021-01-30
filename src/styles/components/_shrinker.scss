@@ -1,7 +1,6 @@
 .shrinker {
   width: 100%;
   background-color: $color-primary;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,6 +28,13 @@
   p {
     color: white;
     font-size: 0.8rem;
-    margin-top: 5px;
+    margin: 5px 5%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include media("<=tablet") {
+      margin: 10px 5%;
+    }
   }
 }

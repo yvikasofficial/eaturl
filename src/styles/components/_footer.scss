@@ -1,0 +1,113 @@
+.footer {
+  background-color: #f8f9fa;
+  width: 100%;
+  padding: 100px 0;
+
+  &__wrapper {
+    @include box-width;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+    .item1 {
+      width: 25%;
+      @include media("<=tablet") {
+        width: 100%;
+      }
+      .footer__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-weight: bold;
+          font-size: 3rem;
+          color: grey;
+        }
+        p {
+          margin: 10px 0;
+          display: block;
+          color: grey;
+          font-size: 0.8rem;
+          padding: 10px;
+          border-bottom: 10px;
+          background-color: white;
+          text-align: center;
+        }
+
+        .links {
+          svg {
+            height: 50px;
+            width: 50px;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+    .item2 {
+      display: flex;
+      justify-content: space-between;
+
+      width: 70%;
+      @include media("<=tablet") {
+        width: 100%;
+        margin-top: 40px;
+      }
+
+      @include media("<=phone") {
+        flex-direction: column;
+      }
+      .block {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+
+        @include media("<=phone") {
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+
+        h5 {
+          font-size: 1.3rem;
+          color: rgb(77, 77, 77);
+          font-weight: 500;
+          margin-bottom: 20px;
+          @include media("<=phone") {
+            margin-top: 50px;
+          }
+        }
+        a {
+          color: grey;
+          margin-bottom: 5px;
+
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: grey;
+  font-size: 0.8rem;
+
+  margin: 30px 0;
+
+  span {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}

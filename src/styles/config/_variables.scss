@@ -8,4 +8,30 @@ $color-grey: rgb(235, 232, 232);
 @mixin box-width {
   width: 1200px;
   margin: 20px auto;
+
+  @include media("<=1300px") {
+    width: 900px;
+  }
+
+  @include media("<=1000px") {
+    width: 700px;
+  }
+
+  @include media("<=tablet") {
+    width: 90%;
+  }
+
+  @include media("<=phone") {
+    width: 95%;
+  }
+}
+
+@mixin noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
