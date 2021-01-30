@@ -13,7 +13,7 @@ const Header = () => {
           <Button outline outlineColor="#fff">
             About
           </Button>
-          <Button color={COLOR_BLUE}>Sign up</Button>
+          <Button backgroundColor={COLOR_BLUE}>Sign up</Button>
           <Button>Log in</Button>
         </div>
       </div>

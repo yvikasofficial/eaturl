@@ -1,0 +1,12 @@
+.hero {
+  height: 60vh;
+  width: 100%;
+  background-color: #bee2e7;
+
+  img {
+    height: 70vh;
+    width: 100%;
+    object-fit: contain;
+    transform: translateX(10%);
+  }
+}

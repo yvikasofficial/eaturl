@@ -2,13 +2,13 @@ import React from "react";
 
 const Button = ({
   children,
-  danger,
   color,
   outline,
   outlineColor,
   width,
   height,
   borderRadius,
+  backgroundColor,
 }) => {
   return (
     <div
@@ -17,8 +17,9 @@ const Button = ({
         width,
         height,
         borderRadius,
-        backgroundColor: outline ? "transparent" : color,
+        backgroundColor: outline ? "transparent" : backgroundColor,
         border: outline ? `1px solid ${outlineColor}` : null,
+        color,
       }}
     >
       {children}
