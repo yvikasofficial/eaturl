@@ -1,0 +1,12 @@
+//config
+@import "./styles/config/variables";
+@import "./styles/config/breakpoints";
+@import "./styles/config/base";
+
+//pages
+@import "./styles/pages/index";
+
+//components
+@import "./styles/components/footer";
+@import "./styles/components/hero";
+@import "./styles/components/layout";
