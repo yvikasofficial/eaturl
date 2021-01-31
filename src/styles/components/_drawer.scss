@@ -1,0 +1,13 @@
+.drawer {
+  position: fixed;
+  width: 80%;
+  height: 100vh;
+  background-color: red;
+  top: 0;
+  right: 0;
+  transition: all 0.4s ease-in-out;
+
+  @include media("<=phone") {
+    width: 100%;
+  }
+}

@@ -30,5 +30,15 @@
       font-size: 1.1rem;
       margin-left: 1.5rem;
     }
+
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @include media(">tablet") {
+      display: none;
+    }
   }
 }
