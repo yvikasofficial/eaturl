@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import Button from "./button";
 import { COLOR_BLUE } from "../utils/constats";
+import { useDispatch } from "react-redux";
+import { shortUrl } from "../redux/shortUrl/shortUrl.actions";
 
 const Shrinker = () => {
   const [url, setUrl] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    dispatch(shortUrl(url));
+  };
 
   return (
     <section className="shrinker">
@@ -15,7 +22,13 @@ const Shrinker = () => {
             type="text"
             placeholder="Paste long url and shorten it"
           />
-          <Button height="50px" width="100px" backgroundColor={COLOR_BLUE}>
+          <Button
+            onClick={handleSubmit}
+            height="50px"
+            width="100px"
+            backgroundColor={COLOR_BLUE}
+            disabled={url.length < 4}
+          >
             Shortner
           </Button>
         </div>

@@ -10,6 +10,7 @@ export const shortUrlReducer = (state = {}, action) => {
     }
 
     case ShortUrlActionTypes.SHORT_URL_SUCCESS: {
+      console.log(action.payload);
       return {
         ...state,
         loading: false,

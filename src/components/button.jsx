@@ -10,11 +10,12 @@ const Button = ({
   borderRadius,
   backgroundColor,
   onClick,
+  disabled,
 }) => {
   return (
     <div
       className="button"
-      onClick={onClick}
+      onClick={disabled ? null : onClick}
       style={{
         width,
         height,
