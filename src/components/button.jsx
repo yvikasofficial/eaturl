@@ -9,10 +9,12 @@ const Button = ({
   height,
   borderRadius,
   backgroundColor,
+  onClick,
 }) => {
   return (
     <div
       className="button"
+      onClick={onClick}
       style={{
         width,
         height,

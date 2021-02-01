@@ -1,7 +1,7 @@
 .hero {
   height: 60vh;
   width: 100%;
-  background-color: #bee2e7;
+  background-color: $color-primary;
 
   @include media("<=tablet") {
     height: 50vh;
