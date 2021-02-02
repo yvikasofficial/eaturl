@@ -4,15 +4,18 @@ import IndexPage from "./pages";
 import "./App.scss";
 import { initilizeApp } from "./redux/base/base.actions";
 import { useDispatch } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
   dispatch(initilizeApp());
 
   return (
-    <Layout>
-      <IndexPage />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <IndexPage />
+      </Layout>
+    </BrowserRouter>
   );
 }
 

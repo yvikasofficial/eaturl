@@ -10,6 +10,7 @@ const Shrinker = () => {
 
   const handleSubmit = () => {
     dispatch(shortUrl(url));
+    setUrl("");
   };
 
   return (

@@ -1,6 +1,6 @@
 .copy {
   width: 100%;
-  margin: 50px 0;
+  margin: 40px 0;
 
   &__wrapper {
     @include box-width;
@@ -44,6 +44,95 @@
       .col {
         display: flex;
         flex-direction: column;
+      }
+    }
+  }
+}
+
+.link-card {
+  width: 100%;
+  border: 2px solid $color-grey;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 50px;
+
+  .divider {
+    height: 2px;
+    width: 100%;
+    background-color: $color-grey;
+    margin: 10px 0;
+  }
+
+  &__top {
+    .row {
+      display: flex;
+      justify-content: space-between;
+      .col {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 1rem;
+        }
+        a {
+          color: grey;
+          font-size: 1rem;
+          width: 40vw;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .date {
+          color: grey;
+          font-size: 0.8rem;
+          display: block;
+          border: 1px solid grey;
+          border-radius: 5px 3px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .col {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        a {
+          color: red;
+          &:hover {
+            color: $color-blue;
+          }
+        }
+        .register {
+          color: $color-blue;
+        }
+
+        .clicks {
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+          border: 2px solid $color-blue;
+          color: $color-blue;
+          padding: 6px;
+          span {
+            background-color: $color-blue;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 5px;
+            margin-left: 5px;
+
+            @include media("<=phone") {
+              font-size: 0.7rem;
+              padding: 3px 5px;
+            }
+          }
+        }
       }
     }
   }
