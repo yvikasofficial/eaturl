@@ -11,7 +11,7 @@ const Copy = () => {
   return (
     <section className="copy">
       <div className="copy__wrapper">
-        {data.map((d) => (
+        {data.reverse().map((d) => (
           <LinkCard
             fullUrl={d.fullUrl}
             date={d.createdAt}

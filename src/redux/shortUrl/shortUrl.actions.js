@@ -1,7 +1,8 @@
 import axios from "axios";
 import BASE_URL from "../../utils/constats";
-import { addLink } from "../links/links.actions";
+import { fetchLinks } from "../links/links.actions";
 import ShortUrlActionTypes from "./shortUrl.constants";
+import { store } from "react-notifications-component";
 
 export const shortUrl = (url) => async (dispatch, getState) => {
   try {
@@ -22,8 +23,19 @@ export const shortUrl = (url) => async (dispatch, getState) => {
       type: ShortUrlActionTypes.SHORT_URL_SUCCESS,
       payload: res.data.shortUrl,
     });
-    dispatch(addLink(res.data));
-
+    store.addNotification({
+      title: "Success",
+      message: "Url has been successfully shrinked",
+      type: "success",
+      container: "top-right",
+      insert: "top",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 2000,
+      },
+    });
+    dispatch(fetchLinks());
     // localStorage.setItem("links", JSON.stringify(getState().links.data));
   } catch (error) {
     console.log(error);

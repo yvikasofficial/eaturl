@@ -5,6 +5,9 @@ import "./App.scss";
 import { initilizeApp } from "./redux/base/base.actions";
 import { useDispatch } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import "animate.css";
+import "react-notifications-component/dist/theme.css";
+import ReactNotification from "react-notifications-component";
 
 function App() {
   const dispatch = useDispatch();
@@ -12,6 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ReactNotification />
       <Layout>
         <IndexPage />
       </Layout>

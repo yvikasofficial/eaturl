@@ -8,7 +8,12 @@ export const linksReducer = (state = { data: [] }, action) => {
         data: [...state.data, action.payload],
       };
     }
-
+    case LinkActionTypes.UPDATE_LINKS: {
+      return {
+        ...state,
+        data: action.payload,
+      };
+    }
     default:
       return state;
   }
