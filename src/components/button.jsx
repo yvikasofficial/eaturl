@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 const Button = ({
   children,
@@ -11,11 +12,13 @@ const Button = ({
   backgroundColor,
   onClick,
   disabled,
+  history,
+  to,
 }) => {
   return (
     <div
       className="button"
-      onClick={disabled ? null : onClick}
+      onClick={disabled ? null : to ? () => history.push(to) : onClick}
       style={{
         width,
         height,
@@ -30,4 +33,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default withRouter(Button);

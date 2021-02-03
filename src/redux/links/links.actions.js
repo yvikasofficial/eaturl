@@ -21,7 +21,10 @@ export const fetchLinks = () => async (dispatch, getState) => {
     const res = await axios.get(BASE_URL + "/api/shortUrl", {
       headers: { browserUid: getState().base.browserUid },
     });
-    dispatch({ type: LinkActionTypes.UPDATE_LINKS, payload: res.data });
+    dispatch({
+      type: LinkActionTypes.UPDATE_LINKS,
+      payload: res.data,
+    });
     localStorage.setItem("links", JSON.stringify(res.data));
   } catch (error) {
     console.log(error);

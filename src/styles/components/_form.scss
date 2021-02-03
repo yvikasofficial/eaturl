@@ -1,0 +1,29 @@
+.form-wrapper {
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid $color-grey;
+  padding: 40px;
+  border-radius: 5px;
+
+  @include media("<=tablet") {
+    width: 90%;
+  }
+}
+
+.form-field {
+  margin-bottom: 30px;
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid $color-grey;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+}

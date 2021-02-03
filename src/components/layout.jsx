@@ -9,13 +9,13 @@ const Layout = ({ children }) => {
   const { loading } = useSelector((state) => state.base);
 
   return (
-    <div>
-      <LoadingOverlay active={loading} spinner={<BounceLoader />}>
+    <LoadingOverlay active={loading} spinner={<BounceLoader />}>
+      <div>
         <Header />
         {children}
         <Footer />
-      </LoadingOverlay>
-    </div>
+      </div>
+    </LoadingOverlay>
   );
 };
 

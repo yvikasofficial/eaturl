@@ -11,7 +11,7 @@ const Copy = () => {
   return (
     <section className="copy">
       <div className="copy__wrapper">
-        {data.reverse().map((d) => (
+        {data.map((d) => (
           <LinkCard
             fullUrl={d.fullUrl}
             date={d.createdAt}
@@ -72,7 +72,7 @@ const LinkCard = ({ fullUrl, shortUrl, clicks, date }) => {
       <div className="link-card__bottom">
         <div className="row">
           <div className="col">
-            <a href="/">localhost:3000/{shortUrl}</a>
+            <Link to={`/${shortUrl}`}>localhost:3000/{shortUrl}</Link>
             <Link to="/signup" className="register">
               {" "}
               register to use other features

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HamburgerMenu from "react-hamburger-menu";
+import { Link } from "react-router-dom";
 import { COLOR_BLUE } from "../utils/constats";
 import Button from "./button";
 import Drawer from "./drawer";
@@ -10,14 +11,18 @@ const Header = () => {
     <header className="header">
       <div className="header__wrapper">
         <div className="header__logo">
-          <span>EatUrl</span>
+          <Link to="/">
+            <span>EatUrl</span>
+          </Link>
         </div>
         <div className="header__links">
           <Button outline outlineColor="#fff">
             About
           </Button>
-          <Button backgroundColor={COLOR_BLUE}>Sign up</Button>
-          <Button>Log in</Button>
+          <Button backgroundColor={COLOR_BLUE} to="/register">
+            Sign up
+          </Button>
+          <Button to="/login">Log in</Button>
         </div>
         <div className="header__menu">
           <Drawer open={open} />
