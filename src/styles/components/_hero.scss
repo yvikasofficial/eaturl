@@ -13,4 +13,19 @@
     object-fit: contain;
     transform: translateX(10%);
   }
+
+  .typewriter {
+    height: 70vh;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    @include box-width;
+
+    @include media("<=tablet") {
+      font-size: 2rem;
+    }
+  }
 }
