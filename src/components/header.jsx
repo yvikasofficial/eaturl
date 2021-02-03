@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HamburgerMenu from "react-hamburger-menu";
+import { logout } from "../redux/user/user.actions";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { COLOR_BLUE } from "../utils/constats";
 import Button from "./button";
@@ -7,6 +9,16 @@ import Drawer from "./drawer";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const { name } = useSelector((state) => state.userLogin.userInfo);
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
+  useEffect(() => {}, [name]);
+
   return (
     <header className="header">
       <div className="header__wrapper">
@@ -19,10 +31,16 @@ const Header = () => {
           <Button outline outlineColor="#fff">
             About
           </Button>
-          <Button backgroundColor={COLOR_BLUE} to="/register">
-            Sign up
-          </Button>
-          <Button to="/login">Log in</Button>
+          {!name ? (
+            <>
+              <Button backgroundColor={COLOR_BLUE} to="/register">
+                Sign up
+              </Button>
+              <Button to="/login">Log in</Button>
+            </>
+          ) : (
+            <Button onClick={handleLogout}>Log out</Button>
+          )}
         </div>
         <div className="header__menu">
           <Drawer open={open} />
