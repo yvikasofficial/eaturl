@@ -6,7 +6,7 @@ import { shortUrl } from "../redux/shortUrl/shortUrl.actions";
 import { ReactComponent as Copy } from "../assets/shrinker/copy.svg";
 import { showErrorToast, showSuccessToast } from "../utils/notifications";
 
-const Shrinker = () => {
+const AdvancedShrinker = () => {
   const [url, setUrl] = useState("");
   let data = useSelector((state) => state.shortUrl);
   const [shortedUrl, setShortedUrl] = useState("");
@@ -38,9 +38,9 @@ const Shrinker = () => {
   }, [data]);
 
   return (
-    <section className="shrinker">
-      <div className="shrinker__wrapper">
-        <div className="shrinker__body">
+    <section className="advanced-shrinker">
+      <div className="advanced-shrinker__wrapper">
+        <div className="advanced-shrinker__body">
           <input
             value={url}
             onChange={(e) => {
@@ -63,7 +63,7 @@ const Shrinker = () => {
           </Button>
         </div>
 
-        <div className="shrinker__link">
+        <div className="advanced-shrinker__link">
           <span> {shortedUrl.length > 1 ? "eaturl.tk/" + shortedUrl : ""}</span>
           <Copy
             onClick={copyText}
@@ -76,4 +76,4 @@ const Shrinker = () => {
   );
 };
 
-export default Shrinker;
+export default AdvancedShrinker;

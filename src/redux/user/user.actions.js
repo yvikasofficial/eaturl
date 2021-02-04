@@ -46,7 +46,7 @@ export const login = (email, password) => async (dispatch) => {
     showSuccessToast("Logged In");
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
-    const mess = error.response.data.message;
+    const mess = error.response ? error.response.data.message : error.message;
     dispatch({ type: UserActionTypes.USER_LOGIN_FAIL, payload: mess });
     showErrorToast(mess);
   }

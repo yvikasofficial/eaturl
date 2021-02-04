@@ -21,3 +21,8 @@ a {
     color: $color-blue;
   }
 }
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
