@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "./button";
 import BASE_URL, { COLOR_BLUE } from "../utils/constats";
 import { useDispatch, useSelector } from "react-redux";
-import { shortUrl } from "../redux/shortUrl/shortUrl.actions";
+import { shortUrlWithAuth } from "../redux/shortUrl/shortUrl.actions";
 import { ReactComponent as Copy } from "../assets/shrinker/copy.svg";
 import { showErrorToast, showSuccessToast } from "../utils/notifications";
 
@@ -13,7 +13,7 @@ const AdvancedShrinker = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    dispatch(shortUrl(url));
+    dispatch(shortUrlWithAuth(url));
     setUrl("");
   };
 

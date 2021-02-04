@@ -1,8 +1,9 @@
 import axios from "axios";
 import BASE_URL from "../../utils/constats";
-import { fetchLinks } from "../links/links.actions";
+import { fetchLinks, fetchLinksWithAuth } from "../links/links.actions";
 import ShortUrlActionTypes from "./shortUrl.constants";
 import { store } from "react-notifications-component";
+import { showErrorToast, showSuccessToast } from "../../utils/notifications";
 
 export const shortUrl = (url) => async (dispatch, getState) => {
   try {
@@ -56,7 +57,6 @@ export const shortUrlWithAuth = (url) => async (dispatch, getState) => {
     };
 
     dispatch({ type: ShortUrlActionTypes.SHORT_URL_REQUEST });
-    console.log(getState().base.browserUid);
     const res = await axios.post(
       BASE_URL + "/api/shortUrl/p",
       { fullUrl: url },
@@ -78,13 +78,30 @@ export const shortUrlWithAuth = (url) => async (dispatch, getState) => {
         duration: 2000,
       },
     });
-    dispatch(fetchLinks());
-    // localStorage.setItem("links", JSON.stringify(getState().links.data));
+    dispatch(fetchLinksWithAuth());
   } catch (error) {
     console.log(error);
     dispatch({
       type: ShortUrlActionTypes.SHORT_URL_FAIL,
       payload: error.message,
     });
+  }
+};
+
+export const shortUrlDelete = (url) => async (dispatch, getState) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getState().userLogin.userInfo.token,
+      },
+    };
+
+    await axios.delete(BASE_URL + "/api/shortUrl/p/" + url, config);
+
+    showSuccessToast("Url Has been deleted!");
+    dispatch(fetchLinksWithAuth());
+  } catch (error) {
+    showErrorToast(error.message);
   }
 };

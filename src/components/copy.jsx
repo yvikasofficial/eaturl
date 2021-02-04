@@ -4,16 +4,16 @@ import { COLOR_BLUE } from "../utils/constats";
 import Button from "./button";
 import { ReactComponent as Startup } from "../assets/copy/startup.svg";
 import { ReactComponent as CopyIcon } from "../assets/shrinker/copy.svg";
+import { ReactComponent as DeleteIcon } from "../assets/copy/delete.svg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { showErrorToast, showSuccessToast } from "../utils/notifications";
 import { fetchLinksWithAuth } from "../redux/links/links.actions";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { shortUrlDelete } from "../redux/shortUrl/shortUrl.actions";
 
 const Copy = ({ auth }) => {
   const dispatch = useDispatch();
-  if (auth) {
-  }
 
   useEffect(() => {
     if (auth) dispatch(fetchLinksWithAuth());
@@ -64,11 +64,17 @@ const Copy = ({ auth }) => {
                   width="100px"
                   height="50px"
                   borderRadius="1000px"
+                  to="/register"
                   backgroundColor={COLOR_BLUE}
                 >
                   Sign up
                 </Button>
-                <Button width="100px" height="50px" borderRadius="1000px">
+                <Button
+                  width="100px"
+                  height="50px"
+                  borderRadius="1000px"
+                  to="/login"
+                >
                   Log in
                 </Button>
               </div>
@@ -84,6 +90,7 @@ export default Copy;
 
 const LinkCard = ({ fullUrl, shortUrl, clicks, date }) => {
   const { name } = useSelector((state) => state.userLogin.userInfo);
+  const dispatch = useDispatch();
   const copyText = async () => {
     try {
       await navigator.clipboard.writeText("localhost:3000/" + shortUrl);
@@ -92,6 +99,11 @@ const LinkCard = ({ fullUrl, shortUrl, clicks, date }) => {
       showErrorToast("Unable to copy clipboard");
     }
   };
+
+  const handleDelete = () => {
+    dispatch(shortUrlDelete(shortUrl));
+  };
+
   return (
     <div className="link-card">
       <div className="link-card__top">
@@ -101,7 +113,14 @@ const LinkCard = ({ fullUrl, shortUrl, clicks, date }) => {
             <a href="/">{fullUrl}</a>
           </div>
           <div className="col">
-            <div className="date">{date.split("T")[0]}</div>
+            <div className="row">
+              {name ? (
+                <div className="row__icon-delete">
+                  <DeleteIcon onClick={handleDelete} />
+                </div>
+              ) : null}
+              <div className="date">{date.split("T")[0]}</div>
+            </div>
           </div>
         </div>
       </div>

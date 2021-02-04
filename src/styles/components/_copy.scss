@@ -74,6 +74,7 @@
     .row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       .col {
         display: flex;
         flex-direction: column;
@@ -153,5 +154,16 @@
     fill: $color-primary;
     cursor: pointer;
     margin-left: 10px;
+  }
+}
+
+.row__icon-delete {
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: red;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 20px;
   }
 }
