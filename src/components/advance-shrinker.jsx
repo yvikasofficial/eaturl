@@ -71,7 +71,6 @@ const AdvancedShrinker = () => {
           />
         </div>
       </div>
-      <p>By using our service you accept the Terms of service and Privacy.</p>
     </section>
   );
 };

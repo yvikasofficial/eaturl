@@ -10,7 +10,7 @@ const MainPage = () => {
       <main className="main-page">
         <Overview />
         <AdvanceShrinker />
-        <Copy />
+        <Copy auth={true} />
       </main>
     </Layout>
   );

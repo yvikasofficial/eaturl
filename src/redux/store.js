@@ -27,6 +27,7 @@ const initialState = {
   userLogin: { userInfo: userInfoFromLocalStorage },
   links: {
     data: linksFromLocalStorage,
+    authLinksData: [],
   },
 };
 
