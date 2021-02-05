@@ -93,7 +93,7 @@ const LinkCard = ({ fullUrl, shortUrl, clicks, date }) => {
   const dispatch = useDispatch();
   const copyText = async () => {
     try {
-      await navigator.clipboard.writeText("localhost:3000/" + shortUrl);
+      await navigator.clipboard.writeText("eaturl.netlify.app/" + shortUrl);
       showSuccessToast("Copying to clipboard was successful!");
     } catch (error) {
       showErrorToast("Unable to copy clipboard");
@@ -129,7 +129,7 @@ const LinkCard = ({ fullUrl, shortUrl, clicks, date }) => {
         <div className="row">
           <div className="col">
             <div className="row">
-              <Link to={`/${shortUrl}`}>localhost:3000/{shortUrl}</Link>
+              <Link to={`/${shortUrl}`}>eaturl.netlify.app/{shortUrl}</Link>
               <div className="row__icon-copy">
                 <CopyIcon onClick={copyText} />
               </div>
